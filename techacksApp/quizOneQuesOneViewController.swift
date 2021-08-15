@@ -8,6 +8,7 @@
 import UIKit
 
 class quizOneQuesOneViewController: UIViewController {
+    var points = quizOnePoints()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,15 +16,14 @@ class quizOneQuesOneViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func enbridgeButton(_ sender: UIButton) {
+      points.quizOneFinalPoints += 1
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let quesTwoVC = segue.destination as? quizOneQuesTwo {
+            quesTwoVC.points = points
+        }
+    }
 
 }

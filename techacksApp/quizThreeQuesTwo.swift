@@ -8,6 +8,7 @@
 import UIKit
 
 class quizThreeQuesTwo: UIViewController {
+    var threePoints = quizThreePoints()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +16,10 @@ class quizThreeQuesTwo: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func yesButton(_ sender: UIButton) {
+        threePoints.quizThreeFinalPoints += 1
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -25,5 +29,11 @@ class quizThreeQuesTwo: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let quizThreeResultsVC = segue.destination as? quizThreeResults {
+            quizThreeResultsVC.threePoints = threePoints
+        }
+    }
 
 }

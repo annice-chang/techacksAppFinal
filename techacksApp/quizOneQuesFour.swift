@@ -8,6 +8,7 @@
 import UIKit
 
 class quizOneQuesFour: UIViewController {
+    var points = quizOnePoints()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +16,15 @@ class quizOneQuesFour: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func no2Button(_ sender: UIButton) {
+        points.quizOneFinalPoints += 1
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let quizOneResultsVC = segue.destination as? quizOneResults {
+            quizOneResultsVC.points = points
+        }
+    }
 
     /*
     // MARK: - Navigation

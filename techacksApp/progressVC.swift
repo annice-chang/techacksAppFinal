@@ -1,14 +1,14 @@
 //
-//  quizTwoQuesTwo.swift
+//  progressVC.swift
 //  techacksApp
 //
-//  Created by Annice Chang on 8/14/21.
+//  Created by Annice Chang on 8/15/21.
 //
 
 import UIKit
 
-class quizTwoQuesTwo: UIViewController {
-    var twoPoints = quizTwoPoints()
+class progressVC: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,15 +16,7 @@ class quizTwoQuesTwo: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func falseButton(_ sender: UIButton) {
-        twoPoints.quizTwoFinalPoints += 1
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let quesThreeVC = segue.destination as? quizTwoQuesThree {
-            quesThreeVC.twoPoints = twoPoints
-        }
-    }
+
     /*
     // MARK: - Navigation
 

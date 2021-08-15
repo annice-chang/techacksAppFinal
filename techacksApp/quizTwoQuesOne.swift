@@ -8,14 +8,25 @@
 import UIKit
 
 class quizTwoQuesOne: UIViewController {
-
+    var twoPoints = quizTwoPoints()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    
+    @IBAction func twoDegreesButton(_ sender: UIButton) {
+        twoPoints.quizTwoFinalPoints += 1
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let quesTwoVC = segue.destination as? quizTwoQuesTwo {
+            quesTwoVC.twoPoints = twoPoints
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
